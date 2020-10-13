@@ -46,9 +46,8 @@ public class Main {
             boolean[] arrColumn = new boolean[size];
             boolean[] arrBox = new boolean[size];
             for (int j = 0; j < size; j++) {
-                if (containsDuplicate(board[i][j], arrRow)) return false;
-                if (containsDuplicate(board[j][i], arrColumn)) return false;
-                if (containsDuplicate(board[3 * (i / 3) + j / 3][3 * (i % 3) + j % 3], arrBox)) return false;
+                if (containsDuplicate(board[i][j], arrRow) || containsDuplicate(board[j][i], arrColumn) || containsDuplicate(board[3 * (i / 3) + j / 3][3 * (i % 3) + j % 3], arrBox))
+                    return false;
             }
         }
         return true;
